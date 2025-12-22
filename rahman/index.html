@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color:aliceblue;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin:0;
+            padding:0;
+            border-style: border-box;
+        }
+        header {
+            background: #fff;
+            background-color:#333;
+            padding: 16px 0;
+            position:sticky;
+            top:0;
+            margin-top:-10px;
+            align-items:flex-start;
+            max-width:100%;
+            padding-bottom:30px;
+        }
+        
+        .logo {
+            font-size: 70px;
+            gap:10px;
+        }
+        .logo img {
+            height: 1em;
+            width:auto;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .hero {
+            background-color:#222;
+
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            margin:0 auto;
+            gap: 40px;
+            padding:80px;
+        }
+        .hero-content {
+            flex:1;
+        }
+        .hero-content p {
+            font-size:18px;
+            color:#f7f7f7;
+        }
+        h1 {
+            font-size: 44px;
+            line-height:1.2;
+            margin-bottom:20px;
+        }
+        .hero-content h1 {
+            margin-bottom:24px;
+            color:#f7f7f7
+        }
+        .hero-content p {
+            margin-bottom:32px;
+        }
+        .hero img {
+            height:30em;
+            width:auto;
+            border-image-repeat: round;
+        }
+        h3 {
+            font-size:20px;
+            margin-bottom:28px;
+        }
+        section {
+            padding: 80px 0;
+        }
+        .feature-list {
+            display:flex;
+        }
+        .feature-item {
+           background-color: #f7f7f7;
+           padding:28px;
+           border-radius:10px;
+           gap:10px;
+           flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+           transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+        .feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        nav ul {
+            display:flex;
+            justify-content:space-between;
+            gap: 28px;
+            
+        }
+         a {
+    position: relative;
+    padding: 4px 0;
+    color:#f7f7f7;
+    text-decoration: none;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #575757;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+.btn {
+            background-color:#888;
+            color:#291e1e;
+            padding:12px 24px;
+            border-style:double;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;
+            transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            background:#bbb;
+            opacity:0.85;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+        }
+        .btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.rahichh-the {
+    background-color: #cfd6dd;
+    display:flex;
+    margin:20px;
+    padding:8px;
+    border-radius:10px;
+    border-color:rgb(138, 138, 135);
+    border-
+}
+.rahichh-the h2 {
+    font-size:30px;
+    text-align:center;
+    color:#291e1e;
+    padding:8px;
+    text-align: center;
+}
+.rahichh-the p {
+    color:#291e1e;
+    text-align:30%;
+    margin:20px;
+    row-gap: 2px;;
+}
+.footer-content {
+    background-color:#333;
+    color: #eee;
+    padding-top: 60px;
+    max-width: 100%;
+    
+}
+.footer-left {
+    max-width: 400px;
+}
+
+.footer-logo {
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.footer-logo img {
+    height: 1em;
+    width:auto;
+}
+
+.footer-left p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-right a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer-right a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    font-size: 13px;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-right {
+        align-items: center;
+    }
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    width:100%;
+}
+
+td {
+    padding: 4px 8px;
+    font-size: 14px;
+    vertical-align: middle;
+    white-space:nowrap;
+}
+
+label {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #cfd6dd;
+    outline: none;
+}
+
+input:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.08);
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background: #000;
+    color: #fff;
+}
+
+input[type="reset"] {
+    background: #e6e6e6;
+    color: #000;
+}
+input[type="tel"] {
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="c:\Users\Amin\Downloads\[CITYPNG.COM]HD Toyota Logo Emblem Transparent PNG - 1500x1500.png"></div>
+                <nav>
+                    <ul>
+                        <li><a href="#main">Main</a></li>
+                        <li><a href="#features">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contacts">Contact Us</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+
+    <section id="main" class="hero">
+        <div class="hero-content">
+            <h1>Toyota Camry</h1>
+            <p>Explore more about this vehicle</p>
+            <button class="btn" a href="#aboutcar">Get explored</button>
+        </div>
+        <div class="hero-image">
+            <img src="C:\Users\Amin\Videos\toyota co\pngimg.com - toyota_PNG1943.png">
+        </div>
+    </section>
+    
+    <section id="features" class="features">
+        <div class="container">
+            <h2>How can we help you?</h2>
+            <div class="feature-list">
+            <div class="feature-item">
+                <h3>Purchasing a new car</h3>
+                <p>Visiting a <strong>TOYOTA</strong> store</p>
+            </div>
+            <div class="feature-item">
+                <h3>Consulting with a seller</h3>
+                <p>Get a meaningful consultation and reccomendation from a dealer</p>
+            </div>
+            <div class="feature-item">
+                <h3>Delivering a car into fron of your door</h3>
+                <p>Order a car and get a delivering in just about 2 weeks</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about" class="aboutcar">
+        <div class="rahichh-the">
+            <h2>About a brand new Toyota Camry</h2>
+            <p><strong>Toyota Camry XV50</strong> (seventh generation for markets outside Japan)</p>
+            <p>A popular mid-size sedan, produced from 2011 to 2020 (restyling until 2018), known for its reliability, comfort and a wide choice of engines (2.0, 2.5 L, V6, hybrid), equipped mainly with 6-speed automatic transmissions, offering many safety options and available in the CIS markets, including Bishkek, with good engine durability indicators, especially the 2.5 L (2AR-FE)</p>
+            <p>The Toyota Camry XV50 is the seventh-generation Camry produced between 2011 and 2017/2018, depending on the market. It became one of Toyota’s most successful mid-size sedans thanks to its strong reputation for reliability, comfort, and low running costs.</p>
+            <p>The XV50 was developed with a focus on improved ride quality and safety compared to the previous XV40 generation. The chassis was refined to provide a more stable and predictable driving experience. The suspension is tuned for comfort, making the car well suited for city driving, while still offering good stability at highway speeds. Combined with solid sound insulation, the Camry XV50 delivers a calm and smooth ride, which is one of its key strengths.</p>
+            <p>Engine options varied by region. Most markets received 2.0-liter and 2.5-liter four-cylinder gasoline engines, while some markets, especially the United States, also offered a 3.5-liter V6 for higher performance. In many CIS and Asian markets, the most popular engine was the 2.5-liter 2AR-FE, known for its durability and long service life when properly maintained. Hybrid versions were also available, combining a 2.5-liter engine with an electric motor to achieve lower fuel consumption without sacrificing everyday usability.</p>
+            <p>The exterior design of the XV50 follows a classic three-box sedan shape with a clean and conservative style. Inside, the cabin focuses on comfort and practicality. It offers comfortable seats, logical controls, and good material quality for its class. Depending on the trim level, features could include dual-zone climate control, cruise control, multimedia systems, and advanced safety options.</p>
+            <p>Most Camry XV50 models are equipped with a 6-speed automatic transmission from Aisin, which is well known for its reliability. Maintenance costs are generally reasonable, and the electronics are relatively simple compared to newer generations. With real-world fuel consumption averaging 7–9 L/100 km for gasoline versions, the Camry XV50 remains a practical and dependable choice, especially on the used car market.</p>
+        </div>
+    </section>
+
+    <section id="contacts" class="cta">
+        <div class="container">
+            <h2>Ready to get order a new one?</h2>
+            <button class="btn">Contact</button>
+        </div>
+    </section>
+
+        <section id="register" class="register">
+            <form action="#" method="post" novalidate>
+                <div class="form-wrapper">
+                    <h1>Register to purchase your dream car</h1>
+                </div>
+                <div class="form-row">
+                    <label for="fullname">Full name</label>
+                <input id="fullname" name="fullname" type="text" placeholder="e.g. Alex Brown" required minlength="4">
+                </div>
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="form-row">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="enter a password" required minlength="8">
+                </div>
+                <div class="form-row" style="display: flex; gap:12px;">
+                    <div style="justify-content: space-between;">
+                    <label for="birth">Birth Date</label>
+                    <input id="birth" name="birth" type="date" required>
+                </div>
+                <div style="width:22px;">
+                    <label for="phone">Phone number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="+996700000000" pattern="^/+?/d{7,15}$">
+                <div class="actions">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Register</button>
+                </div>
+               </form>
+        </section>
+
+        <footer class="footer-content">
+    <div class="container">
+        <div class="footer-left">
+            <div class="footer-logo">
+         <img src="c:\Users\Amin\Downloads\[CITYPNG.COM]HD Toyota Logo Emblem Transparent PNG - 1500x1500.png">
+            <p>Giving a fresh breath to people with a brand-new car</p>
+        </div>
+
+        <div class="footer-right">
+            <a href="#main">Main</a>
+            <a href="#features">Services</a>
+            <a href="#about">About</a>
+            <a href="https://instagram.com/doapaus">Contacts</a>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Toyota Co. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
